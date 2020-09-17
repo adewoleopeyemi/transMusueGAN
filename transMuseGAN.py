@@ -268,7 +268,7 @@ def train_generator(batch_size):
   groove_input=np.random.normal(0, 1, (batch_size, 4, 100))
   model.train_on_batch((chords_input,style_input,melody_input,groove_input), valid)
     
-def train(epochs, batch_size, clip_threshold):
+def train(x_train,epochs, batch_size, clip_threshold):
     epochs = epochs
     for epoch in range(epochs):
       for i in range(30):
