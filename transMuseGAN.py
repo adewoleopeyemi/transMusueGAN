@@ -244,11 +244,11 @@ optimizer= RMSprop(lr=0.00005)
 def train_critic(x_train, batch_size, clip_threshold):
   valid = np.ones((batch_size,1))
   fake = np.zeros((batch_size,1))
-  # TRAIN ON REAL IMAGES
+  # TRAIN ON REAL MUSIC
   idx = np.random.randint(0, x_train.shape[0], batch_size)
-  true_imgs = x_train[idx]
-  critic.train_on_batch(true_imgs, valid)
-  # TRAIN ON GENERATED IMAGES
+  true_musics = x_train[idx]
+  critic.train_on_batch(true_musics, valid)
+  # TRAIN ON GENERATED MUSic
   chords_input = np.random.normal(0, 1, (batch_size, 100))
   style_input=np.random.normal(0, 1, (batch_size, 100))
   melody_input=np.random.normal(0, 1, (batch_size, 4, 100))
